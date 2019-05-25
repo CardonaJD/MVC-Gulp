@@ -18,10 +18,9 @@ function Subscribe() {
         );
     },
   
-    fire: function(o, thisObj) {
-        var scope = thisObj || window;
+    fire: function(o) {
         this.handlers.forEach(function(item) {
-            item.call(scope, o);
+            item(o);
         });
     },
    

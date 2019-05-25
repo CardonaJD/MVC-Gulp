@@ -14,6 +14,6 @@ function GalleryController(el, view, model, eventHandler){
     }
 
     this.bindEvents = function(){
-        this.$el.on("click", "img", () => { eventHandler.fire()} )
+        this.$el.on("click", "img", (e) => { eventHandler.fire(e)} )
     }
 }

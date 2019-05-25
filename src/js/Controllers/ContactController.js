@@ -35,13 +35,16 @@ function ContactController(el, view, model, eventHandler){
         this.view.renderTableContent(this.$el, data);
     }
 
-    this.addImgToContact = function(){
-        console.log(this)
-        console.log("oeoeoeoeoeo")
+    this.addImgToContact = function(e){
+        let element = $(e.target);
+        let imgSrc = element.attr("src");
+        let form = this.$el.find(".js-contact-name");
+
+        form.val(`${imgSrc}`);
     }
 
     this.subscribeEvents = function(){
-        eventHandler.subscribe(this.addImgToContact)
+        eventHandler.subscribe(this.addImgToContact.bind(this))
     }
 }
 
